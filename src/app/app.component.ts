@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StarshipComponent } from './starship/starship.component';
+import { StarshipData } from './starship/starship.component';
 
 @Component({
     selector: 'app-root',
@@ -7,5 +7,5 @@ import { StarshipComponent } from './starship/starship.component';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    public curShip?: StarshipComponent;
+    public curShip?: StarshipData;
 }
