@@ -1,5 +1,6 @@
 export type FrameSize = "tiny" | "small" | "medium" | "large" | "huge" | "gargantuan" | "colossal";
 
+// For both AC and TL
 export const frameModifier: Record<FrameSize,number> = {
     tiny: 2,
     small: 1,
@@ -26,6 +27,7 @@ export const maneuverability: Record<ManeuverabilityType,ManeuverabilityData> = 
 };
 
 export interface ShipFramePart {
+    name: ShipFrameType;
     size: FrameSize;
     maneuverability: ManeuverabilityType;
     baseHp: number;
@@ -57,6 +59,7 @@ export type ShipFrameType = "racer" | "explorer";
 
 export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
     racer: {
+        name: "racer",
         size: "tiny",
         maneuverability: "perfect",
         baseHp: 20,
@@ -70,6 +73,7 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
         weaponMounts: ["asdf"]
     },
     explorer: {
+        name: "explorer",
         size: "medium",
         maneuverability: "good",
         baseHp: 55,
