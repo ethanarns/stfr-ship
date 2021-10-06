@@ -55,6 +55,7 @@ export interface ShieldsPart extends BasePart {
     regenMin: number;
 }
 
+export type WeaponMountPlacement = "turret" | "forward" | "port" | "starboard" | "aft";
 export type SpecialWeaponProperty =
     "Line" |
     "Limited fire 5" |

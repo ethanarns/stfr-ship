@@ -1,4 +1,4 @@
-import { ArmorPart, ComputerPart, CrewQuartersPart, DefensiveCountermeasuresPart, DriftEnginePart, ExpansionBayPart, PowerCorePart, ThrusterPart } from "./part-types";
+import { ArmorPart, ComputerPart, CrewQuartersPart, DefensiveCountermeasuresPart, DriftEnginePart, ExpansionBayPart, PowerCorePart, SensorsPart, ShieldsPart, ThrusterPart } from "./part-types";
 
 export const coreList: PowerCorePart[] = [
     { name: "Micron Light", multBpSize: false, stackable: false, pcu: 50, bp: 4, sizes: ["tiny"] },
@@ -74,6 +74,16 @@ export const driftEngineList: DriftEnginePart[] = [
 
 export const expansionBayList: ExpansionBayPart[] = [
     { name: "Arcane laboratory", multBpSize: false, stackable: true, pcu: 1, bp: 1, description: "" },
-    { name: "Cargo hold", multBpSize: false, stackable: true, pcu: 0, bp: 0, description: "" }
+    { name: "Cargo hold", multBpSize: false, stackable: true, pcu: 0, bp: 0, description: "" },
+    { name: "Science lab", multBpSize: false, stackable: true, pcu: 2, bp: 1, description: "" }
 ];
 
+export const sensorList: SensorsPart[] = [
+    { name: "Cut rate", multBpSize: false, stackable: false, range: "Short", mod: -2, bp: 1, pcu: 0 },
+    { name: "Budget medium-range", multBpSize: false, stackable: false, range: "Medium", mod: 0, bp: 3, pcu: 0 }
+];
+
+export const shieldList: ShieldsPart[] = [
+    { name: "Basic Shields 10", multBpSize: false, stackable: false, totalSp: 10, regenMin: 1, pcu: 5, bp: 2 },
+    { name: "Basic Shields 20", multBpSize: false, stackable: false, totalSp: 20, regenMin: 1, pcu: 10, bp: 3 }
+]

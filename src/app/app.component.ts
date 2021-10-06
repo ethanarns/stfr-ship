@@ -15,5 +15,7 @@ export class AppComponent {
         console.log("baseTl:", this.curShip.getBaseTl());
         console.log("baseAc:", this.curShip.getBaseAc());
         console.log("pilotMod:",this.curShip.getPilotingMod());
+        console.log("RemainingBP:",this.curShip.getRemainingBp());
+        console.log("RemainingPcu:",this.curShip.getRemainingPcu());
     }
 }
