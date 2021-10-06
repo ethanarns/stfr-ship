@@ -1,4 +1,4 @@
-import { frameModifier, ShipFramePart, shipFrames } from '../parts/frames';
+import { ShipFramePart, shipFrames } from '../parts/frames';
 import { armorList, computerList, crewQuartersList } from '../parts/part-list';
 import { ArmorPart, ComputerPart, CrewQuartersPart, PowerCorePart, ThrusterPart } from '../parts/part-types';
 
@@ -48,7 +48,8 @@ export class StarshipData {
 
     public getBaseTl(): number {
         let tl = 10;
-        tl += frameModifier[this.frame.size];
+        // Can be positive or negative
+        tl += this.frame.actlMod;
         // Only goes in negatives
         tl += this.armor.tlMod;
         return tl;

@@ -1,7 +1,7 @@
 export type FrameSize = "tiny" | "small" | "medium" | "large" | "huge" | "gargantuan" | "colossal";
 
 // For both AC and TL
-export const frameModifier: Record<FrameSize,number> = {
+const FRAME_ACTL_MOD: Record<FrameSize,number> = {
     tiny: 2,
     small: 1,
     medium: 0,
@@ -39,6 +39,7 @@ export interface ShipFramePart {
     maxCrew: number;
     cost: number;
     weaponMounts: any[];
+    actlMod: number;
 }
 
 export type ShipFrameType = "racer" | "explorer";
@@ -70,7 +71,8 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
         minCrew: 1,
         maxCrew: 1,
         cost: 4,
-        weaponMounts: ["asdf"]
+        weaponMounts: ["asdf"],
+        actlMod: FRAME_ACTL_MOD["tiny"]
     },
     explorer: {
         name: "explorer",
@@ -84,6 +86,7 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
         minCrew: 1,
         maxCrew: 6,
         cost: 12,
-        weaponMounts: ["asdf"]
+        weaponMounts: ["asdf"],
+        actlMod: FRAME_ACTL_MOD["medium"]
     }
 }
