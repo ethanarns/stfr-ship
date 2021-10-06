@@ -1,0 +1,1 @@
+export type FrameSize = "tiny" | "small" | "medium" | "large" | "huge" | "gargantuan" | "colossal";
