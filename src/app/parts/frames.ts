@@ -25,7 +25,7 @@ export const maneuverability: Record<ManeuverabilityType,ManeuverabilityData> = 
     clumsy: { pilot: -2, turn: 4}
 };
 
-export interface ShipFrameData {
+export interface ShipFramePart {
     size: FrameSize;
     maneuverability: ManeuverabilityType;
     baseHp: number;
@@ -55,7 +55,7 @@ export type ShipFrameType = "racer" | "explorer";
     // "battleship" |
     // "dreadnought";
 
-export const shipFrames: Record<ShipFrameType,ShipFrameData> = {
+export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
     racer: {
         size: "tiny",
         maneuverability: "perfect",
