@@ -11,7 +11,10 @@ export const thrusterList: ThrusterPart[] = [
     { name: "S6 thrusters",  multBpSize: false, stackable: false, frameSize: "small", speed: 6,  pilotMod: 1,  pcu: 30, bp: 3 },
     { name: "S8 thrusters",  multBpSize: false, stackable: false, frameSize: "small", speed: 8,  pilotMod: 0,  pcu: 40, bp: 4 },
     { name: "S10 thrusters", multBpSize: false, stackable: false, frameSize: "small", speed: 10, pilotMod: 0,  pcu: 50, bp: 5 },
-    { name: "S12 thrusters", multBpSize: false, stackable: false, frameSize: "small", speed: 12, pilotMod: -1, pcu: 60, bp: 6 }
+    { name: "S12 thrusters", multBpSize: false, stackable: false, frameSize: "small", speed: 12, pilotMod: -1, pcu: 60, bp: 6 },
+
+    { name: "M4 thrusters", multBpSize: false, stackable: false, frameSize: "medium", speed: 4, pilotMod: 2, pcu: 40, bp: 2 },
+    { name: "M6 thrusters", multBpSize: false, stackable: false, frameSize: "medium", speed: 6, pilotMod: 1, pcu: 50, bp: 3 }
 ];
 
 export const armorList: ArmorPart[] = [
