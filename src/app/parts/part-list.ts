@@ -1,4 +1,9 @@
-import { ArmorPart, ComputerPart, CrewQuartersPart, DefensiveCountermeasuresPart, DriftEnginePart, ExpansionBayPart, ThrusterPart } from "./part-types";
+import { ArmorPart, ComputerPart, CrewQuartersPart, DefensiveCountermeasuresPart, DriftEnginePart, ExpansionBayPart, PowerCorePart, ThrusterPart } from "./part-types";
+
+export const coreList: PowerCorePart[] = [
+    { name: "Micron Light", multBpSize: false, stackable: false, pcu: 50, bp: 4, sizes: ["tiny"] },
+    { name: "Pulse Gray", multBpSize: false, stackable: false, pcu: 100, bp: 10, sizes: ["tiny", "small", "medium"] }
+];
 
 // Thrusters
 export const thrusterList: ThrusterPart[] = [

@@ -3,6 +3,10 @@ import { FrameSize } from "./frames";
 
 export type Range = "Short" | "Medium" | "Long";
 
+export interface PowerCorePart extends BasePart {
+    sizes: FrameSize[];
+}
+
 export interface ThrusterPart extends BasePart {
     frameSize: FrameSize;
     speed: number;
