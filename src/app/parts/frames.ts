@@ -29,7 +29,7 @@ export const maneuverability: Record<ManeuverabilityType,ManeuverabilityData> = 
 export interface ShipFramePart {
     name: ShipFrameType;
     size: FrameSize;
-    maneuverability: ManeuverabilityType;
+    maneuverability: ManeuverabilityData;
     baseHp: number;
     hpIncrement: number;
     dt: number;
@@ -39,7 +39,7 @@ export interface ShipFramePart {
     maxCrew: number;
     cost: number;
     weaponMounts: any[];
-    actlMod: number;
+    actlSizeMod: number;
 }
 
 export type ShipFrameType = "racer" | "explorer";
@@ -62,7 +62,7 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
     racer: {
         name: "racer",
         size: "tiny",
-        maneuverability: "perfect",
+        maneuverability: maneuverability["perfect"],
         baseHp: 20,
         hpIncrement: 5,
         dt: 0,
@@ -72,12 +72,12 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
         maxCrew: 1,
         cost: 4,
         weaponMounts: ["asdf"],
-        actlMod: FRAME_ACTL_MOD["tiny"]
+        actlSizeMod: FRAME_ACTL_MOD["tiny"]
     },
     explorer: {
         name: "explorer",
         size: "medium",
-        maneuverability: "good",
+        maneuverability: maneuverability["good"],//good",
         baseHp: 55,
         hpIncrement: 10,
         dt: 0,
@@ -87,6 +87,6 @@ export const shipFrames: Record<ShipFrameType,ShipFramePart> = {
         maxCrew: 6,
         cost: 12,
         weaponMounts: ["asdf"],
-        actlMod: FRAME_ACTL_MOD["medium"]
+        actlSizeMod: FRAME_ACTL_MOD["medium"]
     }
 }

@@ -1,6 +1,6 @@
 import { ShipFramePart, shipFrames } from '../parts/frames';
-import { armorList, computerList, crewQuartersList } from '../parts/part-list';
-import { ArmorPart, ComputerPart, CrewQuartersPart, PowerCorePart, ThrusterPart } from '../parts/part-types';
+import { armorList, computerList, crewQuartersList, defensiveCountermeasuresList } from '../parts/part-list';
+import { ArmorPart, ComputerPart, CrewQuartersPart, DefensiveCountermeasuresPart, PowerCorePart, ThrusterPart } from '../parts/part-types';
 
 export class StarshipData {
     public tier: number;
@@ -10,6 +10,7 @@ export class StarshipData {
     public armor: ArmorPart;
     public computer: ComputerPart;
     public crewQuarters: CrewQuartersPart;
+    public defensiveCountermeasures: DefensiveCountermeasuresPart;
 
     private readonly tierBp: Record<number,number> = {
         0.25: 25,
@@ -29,6 +30,7 @@ export class StarshipData {
         this.armor = armorList[2]; // Mk 3
         this.computer = computerList[0]; // Basic Computer
         this.crewQuarters = crewQuartersList[0]; // Common
+        this.defensiveCountermeasures = defensiveCountermeasuresList[0]; // Mk 1 defenses
     }
 
     public getRemainingBp(): number {
@@ -43,16 +45,36 @@ export class StarshipData {
         totalBp -= this.armor.bp;
         totalBp -= this.computer.bp;
         totalBp -= this.crewQuarters.bp;
+        totalBp -= this.defensiveCountermeasures.bp;
         return totalBp;
     }
 
     public getBaseTl(): number {
         let tl = 10;
         // Can be positive or negative
-        tl += this.frame.actlMod;
+        tl += this.frame.actlSizeMod;
         // Only goes in negatives
         tl += this.armor.tlMod;
+        // Only positives
+        tl += this.defensiveCountermeasures.tlMod;
         return tl;
+    }
+
+    public getBaseAc(): number {
+        let ac = 10;
+        // Only positives
+        ac += this.armor.acMod;
+        // Can be positive or negative
+        ac += this.frame.actlSizeMod;
+        return ac;
+    }
+
+    public getPilotingMod(): number {
+        let pilotMod = 0;
+        // Can be positive or negative
+        pilotMod += this.frame.maneuverability.pilot;
+        pilotMod += this.thruster.pilotMod;
+        return pilotMod;
     }
 
 }
